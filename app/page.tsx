@@ -10,6 +10,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Navbar from "@/components/navbar";
+import Projects from "@/components/Projects";
+
 import CTABanner from "@/components/CTAbanner";
 import Footer from "@/components/footer";
 import {
@@ -59,117 +61,6 @@ const skills = [
   },
 ];
 
-const technologiesData = [
-  {
-    title: "Publications",
-    subtitle: "Available on Both Stores",
-    items: [
-      {
-        label: "A",
-        name: "App Store",
-        bgColor: "bg-gray-700",
-        textColor: "text-xs",
-      },
-      {
-        label: "P",
-        name: "Play Store",
-        bgColor: "bg-gray-700",
-        textColor: "text-xs",
-      },
-    ],
-  },
-  {
-    title: "Front-end Engineering",
-    subtitle: "Design & Development",
-    items: [
-      {
-        label: "R",
-        name: "React JS",
-        bgColor: "bg-blue-500",
-        textColor: "text-xs",
-      },
-      {
-        label: "R",
-        name: "React Native",
-        bgColor: "bg-blue-500",
-        textColor: "text-xs",
-      },
-      {
-        label: "N",
-        name: "Next.js",
-        bgColor: "bg-blue-500",
-        textColor: "text-xs",
-      },
-      { label: "V", name: "Vue", bgColor: "bg-gray-700", textColor: "text-xs" },
-      {
-        label: "F",
-        name: "Figma",
-        bgColor: "bg-gray-700",
-        textColor: "text-xs",
-      },
-      {
-        label: "J",
-        name: "Jest",
-        bgColor: "bg-gray-700",
-        textColor: "text-xs",
-      },
-      {
-        label: "R",
-        name: "React Testing Library",
-        bgColor: "bg-gray-700",
-        textColor: "text-xs",
-      },
-    ],
-  },
-  {
-    title: "Languages",
-    subtitle: null,
-    items: [
-      {
-        label: "J",
-        name: "JavaScript",
-        bgColor: "bg-yellow-500",
-        textColor: "text-black",
-      },
-      {
-        label: "T",
-        name: "TypeScript",
-        bgColor: "bg-blue-500",
-        textColor: "text-xs",
-      },
-    ],
-  },
-];
-
-const projects = [
-  {
-    title: "S8Globals E-commerce Platform",
-    imageUrl: "https://your-image-host.com/s8globals-ecommerce.png",
-    description:
-      "A cutting-edge e-commerce platform built with Next.js and Tailwind CSS, optimized for performance and scalability.",
-    techStack: ["Next.js", "React", "Tailwind CSS", "Firebase"],
-    githubUrl: "https://github.com/yourusername/s8globals-ecommerce",
-    liveDemoUrl: "https://s8globals-ecommerce.vercel.app",
-  },
-  {
-    title: "Book Listing App",
-    imageUrl: "https://your-image-host.com/book-listing-app.png",
-    description:
-      "A dynamic book listing application featuring advanced search and filtering capabilities using React and Redux.",
-    techStack: ["React", "Redux", "Sass"],
-    githubUrl: "https://github.com/yourusername/book-listing-app",
-    liveDemoUrl: null,
-  },
-  {
-    title: "Social Media Management Dashboard",
-    imageUrl: "https://your-image-host.com/social-media-dashboard.png",
-    description:
-      "An intuitive dashboard for managing social media campaigns with analytics and scheduling built in Vue.js.",
-    techStack: ["Vue.js", "Tailwind CSS", "Node.js"],
-    githubUrl: "https://github.com/yourusername/social-media-dashboard",
-    liveDemoUrl: "https://socialmedia-dashboard.vercel.app",
-  },
-];
 const articles = [
   {
     title: "How to Build Scalable Web Apps in 2025",
@@ -223,7 +114,7 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
       <Navbar
-        brandName="lucasvega"
+        brandName="Home"
         links={[
           { href: "/education", label: "education" },
           { href: "/experience", label: "experience" },
@@ -248,7 +139,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 py-16 px-4 md:px-0">
+      <section className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-22 py-16 px-4 md:px-0">
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <Typewriter
@@ -295,14 +186,8 @@ export default function Home() {
         <div className="flex justify-center md:justify-end">
           <div className="relative w-48 h-48 sm:w-64 sm:h-64">
             <Image
-              src="/placeholder.svg?height=256&width=256"
-              alt="Lucas profile
-
-
-
-
-
-"
+              src="/p1.jpg"
+              alt="Lucas profile"
               fill
               className="rounded-full object-cover"
               priority
@@ -340,128 +225,66 @@ export default function Home() {
           ))}
         </motion.div>
       </section>
-    <section className="py-16 px-6">
-  <div className="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
-    {/* Text Section */}
-    <div className="w-full md:w-1/2 text-center md:text-left">
-      <h2 className="text-4xl font-bold text-gray-900 mb-6">About Me</h2>
-      <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-        I'm Sulayman — a passionate full-stack developer, Islamic scholar,
-        and lifelong learner. Whether it’s building web solutions,
-        deep-diving into classical texts, or creatively experimenting with
-        code and design, I’m always aiming to bridge innovation with
-        tradition.
-        <br />
-        My journey started with curiosity and a love for problem-solving —
-        from scripting small projects to managing full-scale applications
-        that solve real-world challenges. Outside the dev world, I’m
-        rooted in my faith, memorizing the Qur’an and studying Fiqh and
-        Hadith.
-        <br />
-        I believe in leveling up every day. That’s why I balance
-        coding with teaching, mentoring, and staying on top of emerging
-        tech. My goal? To become a digital leader who creates impact while
-        upholding timeless values. Let’s build the future — ethically,
-        creatively, and purposefully.
-      </p>
-      <ul className="text-gray-600 space-y-3 text-left">
-        <li>💻 Full-Stack Developer</li>
-        <li>📖 Islamic Scholar & Hafiz</li>
-        <li>🎨 Amateur Graphic Designer</li>
-        <li>🌍 Future Tech Investor</li>
-      </ul>
-    </div>
+      <section className="py-20 px-6 sm:px-10 lg:px-24  text-gray-100">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-16">
+          {/* Text Section */}
+          <div className="w-full md:w-1/2 text-center md:text-left">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+              About <span className="text-purple-500">Me</span> 
+            </h2>
 
-    {/* Image Section */}
-    <div className="w-full md:w-1/2">
-      <img
-            src={profileImage} alt="Sulayman Profile"
-        className="w-full h-auto rounded-2xl shadow-lg object-cover"
-      />
-    </div>
-  </div>
-</section>
+            <p className="text-base sm:text-lg text-white mb-8 leading-relaxed tracking-wide">
+              I'm <span className="font-semibold text-purple-500">Sulayman</span>{" "}
+              — a passionate full-stack developer, Islamic scholar, and lifelong
+              learner. Whether it’s building web solutions, diving into
+              classical texts, or experimenting with design, I bridge innovation
+              and tradition.
+              <br className="hidden sm:block" />
+              My journey began with curiosity and problem-solving — from mini
+              projects to managing full-scale apps. Beyond tech, I’m deeply
+              rooted in my faith: memorizing the Qur’an and studying Fiqh and
+              Hadith.
+              <br className="hidden sm:block" />I believe in constant growth.
+              From mentoring and teaching to mastering emerging tech, I aim to
+              lead with purpose. Let’s build the future — ethically, creatively,
+              and intentionally.
+            </p>
 
-      {/* Projects Section */}
-      <section className="container mx-auto px-4 md:px-0 py-16">
-        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+            <ul className="text-left text-gray-700 text-base sm:text-lg space-y-3">
+              <li>
+                💻 <span className="font-medium">Full-Stack Developer</span>
+              </li>
+              <li>
+                📖 <span className="font-medium">Islamic Scholar & Hafiz</span>
+              </li>
+              <li>
+                🎨 <span className="font-medium">Amateur Graphic Designer</span>
+              </li>
+              <li>
+                🌍 <span className="font-medium">Future Tech Investor</span>
+              </li>
+            </ul>
+          </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {projects.map(
-            ({
-              title,
-              imageUrl,
-              description,
-              techStack,
-              githubUrl,
-              liveDemoUrl,
-            }) => (
-              <motion.div
-                key={title}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="rounded-lg overflow-hidden shadow-lg bg-gray-800"
-              >
-                <div className="relative h-40 sm:h-48 w-full">
-                  <Image
-                    src={imageUrl}
-                    alt={title}
-                    fill
-                    className="object-cover"
-                    placeholder="blur"
-                    blurDataURL="/placeholder.svg"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">{title}</h3>
-                  <p className="text-gray-400 text-sm mb-3">{description}</p>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="bg-gray-700 rounded px-2 py-1 text-xs font-mono"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-4">
-                    {githubUrl && (
-                      <Link
-                        href={githubUrl}
-                        target="_blank"
-                        className="text-gray-400 hover:text-white transition-colors"
-                        aria-label={`${title} GitHub repository`}
-                      >
-                        GitHub
-                      </Link>
-                    )}
-                    {liveDemoUrl && (
-                      <Link
-                        href={liveDemoUrl}
-                        target="_blank"
-                        className="text-gray-400 hover:text-white transition-colors"
-                        aria-label={`${title} live demo`}
-                      >
-                        Live Demo
-                      </Link>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            )
-          )}
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+            <img
+              src={profileImage}
+              alt="Sulayman Profile"
+              className="w-full max-w-md h-auto rounded-3xl shadow-xl object-cover"
+            />
+          </div>
         </div>
       </section>
 
+      <Projects />
+
       <section className="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center ">
         <div className="w-full md:w-1/2">
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-8 tracking-tight drop-shadow-md">
-            What I Love to Do
+          <h2 className="text-5xl text-white font-extrabold mb-8 tracking-tight drop-shadow-md">
+            What I <span className=" text-purple-500">Love to Do</span> 
           </h2>
-          <p className="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed mb-12">
+          <p className="max-w-3xl mx-auto text-white text-lg leading-relaxed mb-12">
             When I'm not coding the next big thing, you’ll find me diving into
             the latest tech trends, practicing Quranic memorization, or
             exploring creative designs. Passionate about blending innovation
@@ -488,8 +311,8 @@ export default function Home() {
       </section>
 
       <section className="py-20 px-6 text-center">
-        <h2 className="text-5xl font-extrabold text-gray-900 mb-12 tracking-tight drop-shadow-sm">
-          Latest Blogs
+        <h2 className="text-5xl font-extrabold text-white mb-12 tracking-tight drop-shadow-sm">
+          Latest <span className=" text-purple-500">Blogs</span>
         </h2>
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {articles.map(({ title, desc, link }, idx) => (
@@ -514,7 +337,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-<CTABanner />
+      <CTABanner />
       <Footer />
     </div>
   );
