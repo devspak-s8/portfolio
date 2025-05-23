@@ -13,7 +13,7 @@ import Navbar from "@/components/navbar";
 import Projects from "@/components/Projects";
 
 import CTABanner from "@/components/CTAbanner";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 import {
   SiJavascript,
   SiReact,
