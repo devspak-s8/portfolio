@@ -35,27 +35,29 @@ export default function EducationPage() {
         <h2 className="text-3xl font-extrabold text-white mb-8 border-b border-gray-700 pb-3">
           Education & Certifications
         </h2>
+<EducationCard
+  institution="Zad Academy"
+  certificate="Diploma in Islamic Studies"
+  period="Jan 2025 – Jan 2027"
+  hasViewCertificate={false}
+/>
 
-        <EducationCard
-          institution="Wise Up"
-          certificate="Certificate in Advanced English"
-          period="Jan 2020 – Present"
-          hasViewCertificate={true}
-        />
 
-        <EducationCard
-          institution="Your Institution Name"
-          certificate="Certificate in Advanced English"
-          period="Jan 2020 – Present"
-          hasViewCertificate={false}
-        />
 
-        <EducationCard
-          institution="Another Institution"
-          certificate="Certificate in Advanced English"
-          period="Jan 2020 – Present"
-          hasViewCertificate={false}
-        />
+<EducationCard
+  institution="Coursera"
+  certificate="Backend Development Specialization"
+  period="Apr 2025 – Jan 2026"
+  hasViewCertificate={true}
+/>
+
+<EducationCard
+  institution="Lagos State University(LASU)"
+  certificate="Bachelor of Science Surveying and Geoinformatics Course"
+  period="Nov 2024 – 2029"
+  hasViewCertificate={false}
+/>
+
       </section>
 
       {/* Footer */}

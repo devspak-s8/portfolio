@@ -10,10 +10,10 @@ const Footer = () => {
         </div>
 
         <div className="flex gap-6 text-lg">
-          <a href="https://twitter.com/sulaymantechpro" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://x.com/devs_spark" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             Twitter
           </a>
-          <a href="https://github.com/sulaymantechpro" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <a href="https://github.com/devspak-s8" target="_blank" rel="noopener noreferrer" className="hover:text-white">
             GitHub
           </a>
           <a href="#contact" className="hover:text-white">Contact</a>

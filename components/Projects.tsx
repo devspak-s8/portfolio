@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStar,
-  faCode,
-  faExternalLinkAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { toast } from "react-toastify"; // if you use react-toastify
 
 const projects = [
   {
@@ -104,6 +101,11 @@ const Projects: React.FC = () => {
       },
     ],
   };
+  const handleComingSoon = (e: { preventDefault: () => void }) => {
+    e.preventDefault(); // prevent default anchor behavior
+    toast.info("Coming Soon");
+  };
+
   return (
     <section className="py-32 px-6 md:px-20 bg-black text-white min-h-screen">
       <div className="container mx-auto">
@@ -207,28 +209,29 @@ const Projects: React.FC = () => {
               <p className="text-gray-700 leading-relaxed mb-6">
                 {selectedProject.description}
               </p>
-  <ul className="list-disc list-inside text-sm text-gray-700 mb-6">
+              <ul className="list-disc list-inside text-sm text-gray-700 mb-6">
                 {selectedProject.stack.map((line, index) => (
                   <li key={index}>{line}</li>
                 ))}
               </ul>
               <div className="flex gap-4">
-                <a
-                  href={selectedProject.codeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 transition"
-                >
-                  <FaGithub /> View Code
-                </a>
-                <a
-                  href={selectedProject.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition"
-                >
-                  <FaExternalLinkAlt /> Live Demo
-                </a>
+                <div className="flex gap-4">
+                  <a
+                    href="https://github.com/devspak-s8/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded hover:bg-gray-700 transition"
+                  >
+                    <FaGithub /> View Code
+                  </a>
+
+                  <a
+                    onClick={handleComingSoon}
+                    className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

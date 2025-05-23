@@ -20,10 +20,10 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ brandName, links, socialLinks }) => {
   return (
-    <nav className="container fixed mx-auto flex items-center justify-center py-6">
-      <div className="bg-zinc-900 rounded-full px-6 py-2 flex items-center justify-between w-full max-w-md">
-        <div className="flex items-center space-x-8">
-          <Link href="/" className="text-sm font-medium text-purple-400">
+     <nav className="container mx-auto flex items-center justify-center py-6">
+        <div className="bg-zinc-900 rounded-full px-6 py-2 flex items-center justify-between w-full max-w-md">
+          <div className="flex items-center space-x-8">
+           <Link href="/" className="text-sm font-medium text-purple-400">
             {brandName}
           </Link>
           {links.map((link) => (
