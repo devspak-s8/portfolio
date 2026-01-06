@@ -1,30 +1,56 @@
-# Futuristic portfolio website
+# Portfolio
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+This repository contains my personal engineering portfolio, showcasing selected projects and systems I’ve built as a **Full-Stack Developer & Engineer**.  
+The focus is on **scalable APIs, secure systems, and real-world, production-ready workflows**.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/apatira-portfolio/v0-futuristic-portfolio-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/1HEdqjKrDRr)
+---
 
-## Overview
+## 🚀 About
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+I build end-to-end software systems with an emphasis on:
+- Scalability
+- Security
+- Maintainability
+- Clear, verifiable workflows
 
-## Deployment
+This portfolio highlights both **technical depth** and **practical product thinking**, covering backend architecture, APIs, data modeling, and frontend integration.
 
-Your project is live at:
+---
 
-**[https://vercel.com/apatira-portfolio/v0-futuristic-portfolio-website](https://vercel.com/apatira-portfolio/v0-futuristic-portfolio-website)**
+## 🧩 What You’ll Find Here
 
-## Build your app
+- **Backend Systems**
+  - REST / API-based architectures
+  - Authentication & authorization
+  - Secure data handling
+  - Scalable service design
 
-Continue building your app on:
+- **Frontend Applications**
+  - Clean UI integrations
+  - State management
+  - API-driven interfaces
 
-**[https://v0.dev/chat/projects/1HEdqjKrDRr](https://v0.dev/chat/projects/1HEdqjKrDRr)**
+- **Infrastructure & Engineering**
+  - Environment configuration
+  - Production-ready patterns
+  - Modular and maintainable codebases
 
-## How It Works
+---
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 🛠️ Tech Stack (varies by project)
+
+- **Languages:** JavaScript / TypeScript / Python (project-dependent)
+- **Backend:** Node.js, APIs, authentication systems
+- **Frontend:** Modern JS frameworks
+- **Databases:** SQL / NoSQL
+- **Tooling:** Git, CI-friendly workflows, environment-based configs
+
+---
+
+## 📂 Repository Structure
+
+Each project is organized in its own directory and includes:
+- Source code
+- Configuration files
+- Documentation (where applicable)
+
