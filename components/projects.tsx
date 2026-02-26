@@ -6,9 +6,11 @@ import { motion, useAnimation, PanInfo, Variants } from "framer-motion"
 import Image from "next/image"
 import { ArrowUpRight, Github, ArrowRight, ArrowLeft, ExternalLink } from "lucide-react"
 import { useModal } from "@/context/modal-context"
+import { useRouter } from "next/navigation"
 
 export default function Projects() {
   const { openModal } = useModal()
+  const router = useRouter()
   const [activeProject, setActiveProject] = useState(0)
   const [hoveredItem, setHoveredItem] = useState<number | null>(null)
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
@@ -32,144 +34,123 @@ export default function Projects() {
   const featuredProjects = [
     {
       id: 0,
-      title: "Lexi-AI",
+      title: "S8Houses",
       subtitle: "Full Stack",
       description:
-        "An intelligent AI-powered application built with Next.js and TypeScript for enhanced user interactions",
-      image: "/lexi-ai-dashboard.jpg",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "AI/ML"],
-      year: "2025",
-      link: "https://github.com/devspak-s8/Lexi-AI",
-      live: "#",
+        "Modern real-estate platform for discovering and managing property listings with a responsive user experience.",
+      image: "/project-management-team.png",
+      tech: ["TypeScript", "Next.js", "Tailwind CSS", "Full Stack"],
+      year: "2026",
+      slug: "s8houses",
+      link: "https://github.com/devspak-s8/s8houses",
+      live: "https://s8houses.vercel.app",
     },
     {
       id: 1,
-      title: "S8Builder",
-      subtitle: "Full Stack",
+      title: "DevPulse CLI Docs",
+      subtitle: "Documentation",
       description:
-        "Cutting-edge web app to instantly generate websites using AI-powered flow or book professional services",
-      image: "/s8builder-platform.jpg",
-      tech: ["React.js", "Tailwind CSS", "JavaScript", "Vite"],
-      year: "2025",
-      link: "https://github.com/devspak-s8/S8Builder",
-      live: "https://s8-builder.vercel.app",
+        "Interactive documentation site for the DevPulse CLI with clear onboarding, commands, and workflows.",
+      image: "/krea-ai-studio.jpg",
+      tech: ["TypeScript", "Next.js", "Docs", "Developer Tools"],
+      year: "2026",
+      slug: "devpulse-cli-docs",
+      link: "https://github.com/devspak-s8/devpulse-cli-docs",
+      live: "https://devpulse-cli.vercel.app",
     },
     {
       id: 2,
-      title: "Krea AI",
-      subtitle: "Full Stack",
-      description: "Create stunning AI art, images, and videos with advanced AI models including WAN 2.2 and FLUX1",
-      image: "/krea-ai-studio.jpg",
-      tech: ["Next.js", "TypeScript", "OpenAI", "Tailwind"],
-      year: "2025",
-      link: "https://github.com/devspak-s8/Krea-AI---Generate-Amazing-AI-Content",
-      live: "https://krea-ai-generate-amazing-ai-content.vercel.app",
+      title: "Portfolio",
+      subtitle: "Personal Brand",
+      description: "Your personal portfolio showcasing projects, branding work, experience, and contact points.",
+      image: "/lexi-ai-dashboard.jpg",
+      tech: ["TypeScript", "Next.js", "Framer Motion", "Tailwind CSS"],
+      year: "2026",
+      slug: "portfolio",
+      link: "https://github.com/devspak-s8/portfolio",
+      live: "https://apatira.s8globals.org",
     },
     {
       id: 3,
-      title: "S8Globals",
+      title: "Majlisunnor Academy Website",
       subtitle: "Full Stack",
       description:
-        "Forward-thinking digital ecosystem empowering creators, learners, and businesses through curated platforms",
-      image: "/s8globals-ecosystem.jpg",
-      tech: ["TypeScript", "React", "Tailwind CSS", "Vite"],
+        "An academy platform website with structured content, modern UI patterns, and scalable page architecture.",
+      image: "/s8builder-platform.jpg",
+      tech: ["TypeScript", "Next.js", "Tailwind CSS", "Web Platform"],
       year: "2025",
-      link: "https://github.com/devspak-s8/s8Globals",
-      live: "#",
+      slug: "majlisunnor-academy-website",
+      link: "https://github.com/devspak-s8/majlisunnor-academy-website",
+      live: "https://majlisunnor-academy-website.vercel.app",
     },
     {
       id: 4,
-      title: "SmartRoute",
-      subtitle: "Frontend",
-      description: "Navigate Nigerian roads with real-time traffic updates and flood risk awareness application",
-      image: "/smartroute-navigation.jpg",
-      tech: ["JavaScript", "React", "Maps API", "Tailwind"],
-      year: "2025",
-      link: "https://github.com/devspak-s8/SmartRoute",
-      live: "https://smart-route-rose.vercel.app",
+      title: "DevPulse CLI",
+      subtitle: "Backend/CLI",
+      description: "Command-line productivity toolkit focused on developer workflow automation and project acceleration.",
+      image: "/project-management-team.png",
+      tech: ["Python", "CLI", "Automation", "Developer Tools"],
+      year: "2026",
+      slug: "devpulse-cli",
+      link: "https://github.com/devspak-s8/devpulse-cli",
+      live: "#",
     },
   ]
 
   const projectList = [
     {
       id: 1,
-      title: "Majlisunnor Academy",
+      title: "S8Houses",
+      category: "Full Stack",
+      year: "2026",
+      tech: ["TypeScript", "Next.js"],
+      link: "https://github.com/devspak-s8/s8houses",
+      live: "https://s8houses.vercel.app",
+    },
+    {
+      id: 2,
+      title: "S8Houses Backend",
+      category: "Backend",
+      year: "2026",
+      tech: ["TypeScript", "API", "Backend"],
+      link: "https://github.com/devspak-s8/s8houses-backend",
+      live: "#",
+    },
+    {
+      id: 3,
+      title: "DevPulse CLI Docs",
+      category: "Documentation",
+      year: "2026",
+      tech: ["TypeScript", "Next.js"],
+      link: "https://github.com/devspak-s8/devpulse-cli-docs",
+      live: "https://devpulse-cli.vercel.app",
+    },
+    {
+      id: 4,
+      title: "DevPulse CLI",
+      category: "Developer Tool",
+      year: "2026",
+      tech: ["Python", "CLI"],
+      link: "https://github.com/devspak-s8/devpulse-cli",
+      live: "#",
+    },
+    {
+      id: 5,
+      title: "Portfolio",
+      category: "Personal Brand",
+      year: "2026",
+      tech: ["TypeScript", "Next.js"],
+      link: "https://github.com/devspak-s8/portfolio",
+      live: "https://apatira.s8globals.org",
+    },
+    {
+      id: 6,
+      title: "Majlisunnor Academy Website",
       category: "Full Stack",
       year: "2025",
       tech: ["TypeScript", "Next.js"],
       link: "https://github.com/devspak-s8/majlisunnor-academy-website",
-    },
-    {
-      id: 2,
-      title: "React Ticket App",
-      category: "Frontend",
-      year: "2025",
-      tech: ["TypeScript", "React"],
-      link: "https://github.com/devspak-s8/React-ticket",
-    },
-    {
-      id: 3,
-      title: "Vue Ticket App",
-      category: "Frontend",
-      year: "2025",
-      tech: ["Vue.js", "TypeScript"],
-      link: "https://github.com/devspak-s8/Vue-Ticket-App",
-    },
-    {
-      id: 4,
-      title: "GTLA Academy",
-      category: "Full Stack",
-      year: "2025",
-      tech: ["TypeScript", "Next.js"],
-      link: "https://github.com/devspak-s8/GTLA---God-s-Teachings-Leadership-Academy",
-    },
-    {
-      id: 5,
-      title: "Emoji Match Quest",
-      category: "Frontend",
-      year: "2025",
-      tech: ["JavaScript", "React"],
-      link: "https://github.com/devspak-s8/EMOJI-MATCH-QUEST",
-    },
-    {
-      id: 6,
-      title: "S8 Backend",
-      category: "Backend",
-      year: "2025",
-      tech: ["Python", "Django"],
-      link: "https://github.com/devspak-s8/s8Backend",
-    },
-    {
-      id: 7,
-      title: "Fixify",
-      category: "Full Stack",
-      year: "2025",
-      tech: ["TypeScript", "Next.js"],
-      link: "https://github.com/devspak-s8/fixify",
-    },
-    {
-      id: 8,
-      title: "Crypto Studio Landing",
-      category: "Landing Page",
-      year: "2025",
-      tech: ["TypeScript", "React"],
-      link: "https://github.com/devspak-s8/crypto-studio-landing",
-    },
-    {
-      id: 9,
-      title: "Daniel Alausa Portfolio",
-      category: "Portfolio",
-      year: "2025",
-      tech: ["TypeScript", "Next.js"],
-      link: "https://github.com/devspak-s8/Daniel-Alausa---Project-Coordinator-Portfolio",
-    },
-    {
-      id: 10,
-      title: "UserProfile HNG",
-      category: "Frontend",
-      year: "2025",
-      tech: ["CSS", "HTML"],
-      link: "https://github.com/devspak-s8/UserProfile-HNG",
+      live: "https://majlisunnor-academy-website.vercel.app",
     },
   ]
 
@@ -320,6 +301,8 @@ export default function Projects() {
             <div className="flex items-center gap-3">
               <button
                 onClick={prevProject}
+                aria-label="Previous featured project"
+                title="Previous featured project"
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-300"
               >
                 <ArrowLeft className="w-4 h-4 md:w-5 md:h-5" />
@@ -331,6 +314,8 @@ export default function Projects() {
               </div>
               <button
                 onClick={nextProject}
+                aria-label="Next featured project"
+                title="Next featured project"
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-300"
               >
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
@@ -352,7 +337,13 @@ export default function Projects() {
                 <div
                   key={project.id}
                   className={`carousel-card relative flex-shrink-0 w-[calc(100vw-48px)] sm:w-[500px] lg:w-[600px] h-[450px] sm:h-[500px] lg:h-[550px] rounded-2xl lg:rounded-3xl overflow-hidden group transition-all duration-500 transform ${index === activeProject ? "opacity-100 scale-100" : "opacity-60 scale-[0.97]"}`}
-                  onClick={() => goToProject(index)}
+                  onClick={() => {
+                    if (index === activeProject) {
+                      router.push(`/projects/${project.slug}`)
+                    } else {
+                      goToProject(index)
+                    }
+                  }}
                 >
                   {/* Card Background */}
                   <div className="absolute inset-0">
@@ -365,6 +356,20 @@ export default function Projects() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent"></div>
                     <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/10 transition-colors duration-500"></div>
+                  </div>
+
+                  <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        router.push(`/projects/${project.slug}`)
+                      }}
+                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 text-slate-900 text-xs font-medium"
+                      aria-label={`View more details for ${project.title}`}
+                    >
+                      View More
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
                   </div>
 
                   {/* Card Number */}
@@ -411,6 +416,17 @@ export default function Projects() {
                       className={`flex gap-3 transition-all duration-500 ${index === activeProject ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                         }`}
                     >
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          router.push(`/projects/${project.slug}`)
+                        }}
+                        className="group/btn inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm border border-white/20 hover:bg-white/20 transition-all duration-300"
+                      >
+                        View More
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                      </button>
+
                       <button
                         onClick={(e) => handleLiveDemo(e, project.live, project.title)}
                         className="group/btn inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-900 rounded-full font-medium text-sm hover:bg-slate-100 transition-all duration-300"
@@ -530,6 +546,10 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {project.live && project.live !== "#" && (
+                    <span className="text-xs text-slate-500 dark:text-slate-400 truncate">Live: {project.live}</span>
+                  )}
                 </a>
               ))}
             </motion.div>

@@ -7,44 +7,43 @@ export default function Experience() {
 const experiences = [
   {
     id: 1,
-    role: "Lead Frontend Developer",
-    company: "Diagnoxix",
-    duration: "June 2025 - Present",
+    role: "Lead Product Developer",
+    company: "S8 Ecosystem",
+    duration: "2024 – Present",
     description:
-      "Leading the frontend team, building scalable and high-performance user interfaces, integrating modern frameworks, and ensuring code quality and maintainability.",
-    skills: ["React", "TypeScript", "Tailwind CSS", "UI/UX Design", "Framer Motion", "Component Systems"],
+      "Building and shipping multiple products within the S8 ecosystem including SmartRoute (AI navigation), Krea (AI content generation), and S8Builder (No-code website builder). Focused on rapid prototyping, user feedback integration, and scaling products from MVP to production.",
+    skills: ["Next.js", "React", "TypeScript", "AI Integration", "Product Development"],
     icon: Briefcase,
   },
   {
     id: 2,
-    role: "Developer at Provenly",
-    company: "Provenly",
-    duration: "September 2025 - Present", // replace with actual dates
+    role: "Full Stack Developer & Designer",
+    company: "Freelance Projects",
+    duration: "2023 – Present",
     description:
-      "Contributed to platform development, implementing features across the stack, and ensuring a smooth, performant user experience.",
-    skills: ["React", "Node.js", "TypeScript", "AWS", "API Integration"],
+      "Developed custom web applications and platforms for startups and businesses. Work spans from design systems and UI implementation to backend infrastructure. Recent projects include ticket management systems, academy platforms, and dashboard applications.",
+    skills: ["Vue.js", "React", "Python", "Django", "Full Stack Architecture"],
     icon: Building,
   },
-  // Add previous experiences if needed
   {
     id: 3,
-    role: "Junior Web Developer",
-    company: "StartUp Ventures",
-    duration: "2020 - 2021",
-    description: "Developed web applications and maintained client websites with HTML, CSS, and JavaScript.",
-    skills: ["HTML/CSS", "JavaScript", "jQuery", "Bootstrap", "Git"],
+    role: "Frontend Engineer",
+    company: "Open Source & Learning",
+    duration: "2022 – 2024",
+    description: "Contributed to various open-source projects and built portfolio projects to develop expertise. Created interactive applications like Emoji Match Quest, UserProfile HNG, and experimental apps. Strong focus on component architecture and user experience optimization.",
+    skills: ["JavaScript", "React", "CSS", "Component Design", "UX Implementation"],
     icon: Calendar,
   },
 ];
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
   }
 
   const cardVariant = {
     hidden: { opacity: 0, x: -50, rotateY: 20 },
-    visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: { opacity: 1, x: 0, rotateY: 0, transition: { duration: 0.8, ease: "easeOut" as const } },
   }
 
   return (
@@ -66,7 +65,7 @@ const experiences = [
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1.5, ease: "easeInOut" as const }}
             style={{ originY: 0 }}
             className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-400 via-slate-300 to-transparent dark:from-slate-600 dark:via-slate-500 dark:to-transparent timeline-line transform md:-translate-x-1/2"
           ></motion.div>
@@ -92,7 +91,7 @@ const experiences = [
                     <div className="bg-slate-100 dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-xl p-4 md:p-6 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 hover:shadow-lg hover:shadow-slate-400/10 dark:hover:shadow-slate-600/10">
                       {/* Timeline dot */}
                       <div
-                        className={`absolute left-0 md:left-1/2 top-6 w-6 h-6 bg-gradient-to-r from-slate-400 to-slate-500 dark:from-slate-600 dark:to-slate-700 rounded-full border-4 border-white dark:border-slate-950 transform md:-translate-x-1/2 -translate-x-1/2 md:translate-x-0`}
+                        className={`absolute left-0 md:left-1/2 top-6 w-6 h-6 bg-gradient-to-r from-slate-400 to-slate-500 dark:from-slate-600 dark:to-slate-700 rounded-full border-4 border-white dark:border-slate-950 transform md:-translate-x-1/2 -translate-x-1/2`}
                       ></div>
 
                       <div className="flex items-start gap-3 mb-3 md:mb-4">
